@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html> 
+<html> 
+<head> 
+  <meta charset="utf-8" />
+  <title>Ishop</title>
+</head>
+<body> 
+  <div id="container"></div> 
+      
+  <script src="https://unpkg.com/react@15/dist/react.js"></script> 
+  <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+
+  <script src="Ishop.js"></script>   
+  <link rel="stylesheet" type="text/css" href="Ishop.css">
+
+  <script src="HeaderBlock.js"></script>
+  <link rel="stylesheet" type="text/css" href="HeaderBlock.css">
+
+  <script src="MediaBlock.js"></script>
+  <link rel="stylesheet" type="text/css" href="MediaBlock.css">
+
+  <script>
+    var headerText = 'Магазин компьютерной техники';
+    var mediaArray = [
+      {code: 1, name: 'Видеокарта Palit GeForce RTX 3060', url: 'https://content2.onliner.by/catalog/device/main/6e66d6404627c37b16a982043be018a6.jpeg', price: 1278.54, inStock: 15},
+      {code: 2, name: 'Монитор Xiaomi Mi', url: 'https://content2.onliner.by/catalog/device/main/04dc2028bcdec4ec68e7104727a6417f.jpeg', price: 1042.33, inStock: 8},
+      {code: 3, name: 'Компьютер FK BY Tornado', url: 'https://content2.onliner.by/catalog/device/main/58d09a97108cd0056ee9dac9ef32da03.jpeg', price: 3068.99, inStock: 12},
+      {code: 4, name: 'Клавиатура Defender Black Raven', url: 'https://content2.onliner.by/catalog/device/main/2b76c43e373de0a55305c76b81b96624.jpeg', price: 79.93, inStock: 18},
+    ];
+
+    ReactDOM.render(
+      React.createElement(Ishop, {header:headerText, content:mediaArray}),
+      document.getElementById('container')
+    );
+  </script>
+</body> 
+</html>

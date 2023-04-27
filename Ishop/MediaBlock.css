@@ -1,0 +1,29 @@
+﻿.media {
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid gray;
+    border-radius: 0.5em;
+    box-shadow: 0.1em 0.1em 0.5em #124;
+}
+  
+.media__img {
+    flex: 1 25em;
+    padding: 0.5em;
+    max-width: 100%;
+    object-fit: cover;
+}   
+
+.media__body {
+    padding: 0.5em;
+    margin-top: 0;
+    margin-left: 2em;
+    flex: 1;
+}
+
+@media (max-width: 54.625em) {
+    .media__body {
+        margin-top: 2em;
+        margin-left: 0;
+    }
+}
+
