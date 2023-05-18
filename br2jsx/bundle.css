@@ -1,0 +1,24 @@
+:root {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  margin: 0;
+  text-align: center;
+  font-size: 2em;  
+  margin-top: 5em;
+}
+
+.br2jsx {
+  background-color: #2f4f4f;
+  color:white
+}
+
+/*# sourceMappingURL=bundle.css.map*/
