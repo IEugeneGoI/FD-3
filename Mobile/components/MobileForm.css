@@ -1,0 +1,15 @@
+.MobileForm {
+    width: 25em;
+    position: relative;
+}
+
+
+.MobileForm span {
+    margin-right: 1.2em;
+}
+
+.MobileForm input {
+    width: 15em;
+    position: absolute;
+    right: 0;
+}

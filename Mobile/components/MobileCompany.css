@@ -1,0 +1,22 @@
+﻿
+.MobileCompanyClients {
+  border-spacing: 0.5em 0.5em;
+}
+
+
+.MobileCompanyClients td {
+  text-align: center;
+  padding: 0 3em;
+}
+
+.Filter {
+  padding-top: 2em;
+}
+
+.MobileCompanyClients thead{
+  background-color: lightcyan;
+}
+
+.MobileCompanyClients tbody {
+  background-color: lightyellow;
+}
