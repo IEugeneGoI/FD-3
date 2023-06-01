@@ -1,0 +1,10 @@
+.ProductInfo {
+    display: block;
+    margin-top: 1.5em;
+    font-weight: bolder;
+}
+
+.ProductInfo > * {
+    display: block;
+    margin: 0.5em 0;
+}
