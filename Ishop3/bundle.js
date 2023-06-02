@@ -30617,8 +30617,11 @@ var Ishop = function (_React$Component) {
     }, _this.onChange = function () {
       _this.setState({ blockChange: true });
     }, _this.newProduct = function () {
-      var key = ++_this.state.key;
-      var newKey = String(key);
+      var items = _this.state.items;
+      var newKey = items.reduce(function (acc, curr) {
+        acc.code > curr.code ? acc.code : curr.code;
+        return curr.code + 1;
+      });
       _this.setState({ mode: 2, key: newKey, add: true });
     }, _this.changeItems = function (newItem) {
       var items = void 0;
@@ -30722,8 +30725,11 @@ var Ishop = function (_React$Component) {
           )
         ),
         _react2.default.createElement('input', { type: 'button', value: 'New Product', onClick: this.newProduct, hidden: this.state.add == true || this.state.mode == 2 }),
-        this.state.selectedItemCode && _react2.default.createElement(_ProductInfo2.default, { item: item, mode: this.state.mode }),
-        (this.state.selectedItemCode || this.state.add) && _react2.default.createElement(_ProductEdit2.default, {
+        this.state.selectedItemCode && _react2.default.createElement(_ProductInfo2.default, {
+          item: item,
+          mode: this.state.mode
+        }),
+        this.state.add && _react2.default.createElement(_ProductEdit2.default, {
           key: this.state.key,
           item: this.state.add ? addItem : item,
           mode: this.state.mode,
@@ -30743,7 +30749,7 @@ Ishop.displayName = 'Ishop';
 Ishop.propTypes = {
   name: _propTypes2.default.string.isRequired,
   items: _propTypes2.default.arrayOf(_propTypes2.default.shape({
-    code: _propTypes2.default.string.isRequired,
+    code: _propTypes2.default.number.isRequired,
     name: _propTypes2.default.string.isRequired,
     url: _propTypes2.default.string.isRequired,
     price: _propTypes2.default.string.isRequired,
@@ -31868,7 +31874,7 @@ var Product = function (_React$Component) {
 
 Product.displayName = 'Product';
 Product.propTypes = {
-    code: _propTypes2.default.string.isRequired,
+    code: _propTypes2.default.number.isRequired,
     name: _propTypes2.default.string.isRequired,
     price: _propTypes2.default.string.isRequired,
     url: _propTypes2.default.string.isRequired,
@@ -32173,7 +32179,7 @@ exports.default = ProductEdit;
 /* 31 */
 /***/ (function(module, exports) {
 
-module.exports = [{"code":"1","name":"Видеокарта Palit GeForce RTX 3060","url":"https://content2.onliner.by/catalog/device/main/6e66d6404627c37b16a982043be018a6.jpeg","price":"1278.54","inStock":"15"},{"code":"2","name":"Монитор Xiaomi Mi","url":"https://content2.onliner.by/catalog/device/main/04dc2028bcdec4ec68e7104727a6417f.jpeg","price":"1042.33","inStock":"8"},{"code":"3","name":"Компьютер FK BY Tornado","url":"https://content2.onliner.by/catalog/device/main/58d09a97108cd0056ee9dac9ef32da03.jpeg","price":"3068.99","inStock":"12"},{"code":"4","name":"Клавиатура Defender Black Raven","url":"https://content2.onliner.by/catalog/device/main/2b76c43e373de0a55305c76b81b96624.jpeg","price":"79.93","inStock":"18"}]
+module.exports = [{"code":1,"name":"Видеокарта Palit GeForce RTX 3060","url":"https://content2.onliner.by/catalog/device/main/6e66d6404627c37b16a982043be018a6.jpeg","price":"1278.54","inStock":"15"},{"code":2,"name":"Монитор Xiaomi Mi","url":"https://content2.onliner.by/catalog/device/main/04dc2028bcdec4ec68e7104727a6417f.jpeg","price":"1042.33","inStock":"8"},{"code":3,"name":"Компьютер FK BY Tornado","url":"https://content2.onliner.by/catalog/device/main/58d09a97108cd0056ee9dac9ef32da03.jpeg","price":"3068.99","inStock":"12"},{"code":4,"name":"Клавиатура Defender Black Raven","url":"https://content2.onliner.by/catalog/device/main/2b76c43e373de0a55305c76b81b96624.jpeg","price":"79.93","inStock":"18"}]
 
 /***/ })
 /******/ ]);

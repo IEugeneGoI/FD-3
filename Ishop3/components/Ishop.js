@@ -14,7 +14,7 @@ class Ishop extends React.Component {
     name: PropTypes.string.isRequired,
     items: PropTypes.arrayOf(
       PropTypes.shape({
-        code: PropTypes.string.isRequired,
+        code: PropTypes.number.isRequired,
         name: PropTypes.string.isRequired,
         url: PropTypes.string.isRequired,
         price: PropTypes.string.isRequired,
@@ -59,9 +59,12 @@ class Ishop extends React.Component {
   }
 
   newProduct = () => {
-    let key = ++this.state.key;
-    let newKey = String(key);
-    this.setState({mode: 2, key: newKey, add: true});
+    const items = this.state.items;
+    const newKey = items.reduce((acc, curr) => {
+      acc.code > curr.code ? acc.code : curr.code;
+      return curr.code + 1;
+    });
+    this.setState({mode: 2, key: newKey, add: true});    
   }
 
   changeItems = (newItem) => {
@@ -129,9 +132,13 @@ class Ishop extends React.Component {
                   </tbody>
               </table>
               <input type ='button' value ='New Product'  onClick = {this.newProduct}  hidden = {this.state.add == true || this.state.mode == 2}/>
-              {this.state.selectedItemCode && <ProductInfo item = {item}   mode = {this.state.mode}/>}
+              {this.state.selectedItemCode && 
+                <ProductInfo 
+                  item = {item}
+                  mode = {this.state.mode}
+                />}
               {
-                (this.state.selectedItemCode || this.state.add) &&
+                (this.state.add) &&
                 <ProductEdit  
                   key = {this.state.key}   
                   item = {this.state.add ? addItem : item}

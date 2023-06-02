@@ -6,7 +6,7 @@ class Product extends React.Component {
     static displayName = 'Product'
 
     static propTypes = {
-        code: PropTypes.string.isRequired,
+        code: PropTypes.number.isRequired,
         name: PropTypes.string.isRequired,
         price: PropTypes.string.isRequired,
         url: PropTypes.string.isRequired,
